@@ -19,6 +19,11 @@ const FollowersTitle = styled.h2`
   margin: 4rem 0;
 `
 
+const FollowersDiv = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+`
+
 class App extends React.Component {
   state = {
     me: {},
@@ -32,7 +37,6 @@ class App extends React.Component {
       me: user.data,
       myFollowers: followers.data
     })
-    console.log(this.state.me)
     // axios
     // .get('https://api.github.com/users/lenwinkler')
     //   .then(res => {
@@ -54,7 +58,7 @@ class App extends React.Component {
   }
 
   render() {
-
+    console.log('followers state',this.state.myFollowers)
     return (
       <div className="App">
         <Title>Github User Card: <span>React Edition</span></Title>
@@ -63,9 +67,16 @@ class App extends React.Component {
           <FollowersTitle>My Github followers:</FollowersTitle>
         </MyDiv>
         
-        <div className="followers-div">
-
-        </div>
+        <FollowersDiv>
+        {this.state.myFollowers.map(item => (
+          <Card key={item.id}img={item.avatar_url} 
+          location={item.location} 
+          profile={item.html_url} 
+          followers={item.followers} 
+          following={item.following} 
+          bio={item.bio}/>
+        ))}
+        </FollowersDiv>
       </div>
     );
   };

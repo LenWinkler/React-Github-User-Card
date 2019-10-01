@@ -6,13 +6,14 @@ const CardDiv = styled.div`
     padding: 1rem;
     box-shadow: 1px 1px 1px 1px grey;
     border-left: 1px solid grey;
+    margin: 1rem;
 `
 const CardImg = styled.img`
-    width: 100%;
+    width: 90%;
 `
 
 const Card = props => {
-    console.log('card props', props)
+    console.log('followers', props.followers)
     return (
         <CardDiv className="card">
             <div className="image-div">
