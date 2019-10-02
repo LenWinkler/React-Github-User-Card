@@ -6,7 +6,7 @@ import './App.css';
 import styled from "styled-components"
 
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 1.6rem;
 `
 const MyDiv = styled.div`
   display: flex;
@@ -18,19 +18,24 @@ const MyDiv = styled.div`
 
 const FollowersTitle = styled.h2`
   margin: 4rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px dashed lime;
 `
 
 const FollowersDiv = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  border-bottom: 2px solid lime;
+  padding-bottom: 2rem;
 `
 
 const Footer = styled.footer`
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-    font-size: .8rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: .8rem;
 `
+
 
 class App extends React.Component {
   state = {
@@ -50,7 +55,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Title>Github User Card: <span>React Edition</span></Title>
+        <Title>Github User Card: <span>React Edition!</span></Title>
         <MyDiv>
           <Card img={this.state.me.avatar_url} location={this.state.me.location} profile={this.state.me.html_url} followers={this.state.me.followers} following={this.state.me.following} bio={this.state.me.bio}/>
           <FollowersTitle>My Github followers:</FollowersTitle>

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  max-width: 845px;;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -19,4 +21,16 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+@keyframes blinkingText{
+	0%{		color: lime;	}
+	49%{	color: transparent;	}
+	50%{	color: transparent;	}
+	99%{	color:transparent;	}
+	100%{	color: lime;	}
+}
+
+.blinking{
+	animation:blinkingText 0.9s infinite;
 }

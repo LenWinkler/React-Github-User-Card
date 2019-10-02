@@ -1,5 +1,7 @@
 import React from "react";
-import { CardDiv, CardImg, CardP } from "../Style";
+import { CardDiv, CardImg, CardP, Cursor } from "../Style";
+
+
 
 
 const Card = props => {
@@ -14,6 +16,7 @@ const Card = props => {
                 <CardP>{`Followers: ${props.followers}`}</CardP>
                 <CardP>{`Following: ${props.following}`}</CardP>
                 <CardP>{`Bio: "${props.bio}"`}</CardP>
+                {/* <Cursor></Cursor> */}
             </div>
         </CardDiv>
     )
