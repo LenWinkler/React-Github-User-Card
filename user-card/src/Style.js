@@ -22,6 +22,7 @@ export const CardP = styled.p`
     font-family: 'Press Start 2P', cursive;
     font-size: .7rem;
     line-height: 2;
+    word-wrap: break-word;
 `
 
 // export const Cursor = styled.div`
