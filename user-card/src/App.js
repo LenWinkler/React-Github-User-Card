@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import Card from "./components/Card";
+import FollowerCard from "./components/FollowerCard";
 import './App.css';
 import styled from "styled-components"
 
@@ -22,6 +23,13 @@ const FollowersTitle = styled.h2`
 const FollowersDiv = styled.div`
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+`
+
+const Footer = styled.footer`
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-size: .8rem;
 `
 
 class App extends React.Component {
@@ -37,28 +45,9 @@ class App extends React.Component {
       me: user.data,
       myFollowers: followers.data
     })
-    // axios
-    // .get('https://api.github.com/users/lenwinkler')
-    //   .then(res => {
-    //     axios.get('https://api.github.com/users/lenwinkler/followers')
-    //       .then(res => {
-    //         console.log('followers get', res);
-    //         this.setState({
-    //           myFollowers: res.data
-    //         })
-    //       })
-    //     console.log('my profile get', res);
-    //     this.setState({
-    //       me: res.data
-    //     })
-    //     console.log('my state', this.state.me);
-    //     console.log('followers state', this.state.myFollowers)
-    //   })
-    //   .catch(err => console.log('my axios get error', err))
   }
 
   render() {
-    console.log('followers state',this.state.myFollowers)
     return (
       <div className="App">
         <Title>Github User Card: <span>React Edition</span></Title>
@@ -69,14 +58,10 @@ class App extends React.Component {
         
         <FollowersDiv>
         {this.state.myFollowers.map(item => (
-          <Card key={item.id}img={item.avatar_url} 
-          location={item.location} 
-          profile={item.html_url} 
-          followers={item.followers} 
-          following={item.following} 
-          bio={item.bio}/>
+          <FollowerCard key ={item.id} login={item.login}/>
         ))}
         </FollowersDiv>
+        <Footer>© 2019 Len Winkler</Footer>
       </div>
     );
   };

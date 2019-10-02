@@ -1,30 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import { CardDiv, CardImg, CardP } from "../Style";
 
-const CardDiv = styled.div`
-    width: 40%;
-    padding: 1rem;
-    box-shadow: 1px 1px 1px 1px grey;
-    border-left: 1px solid grey;
-    margin: 1rem;
-`
-const CardImg = styled.img`
-    width: 90%;
-`
 
 const Card = props => {
-    console.log('followers', props.followers)
     return (
         <CardDiv className="card">
             <div className="image-div">
                 <CardImg src={props.img} alt="user" />
             </div>
             <div className="card-text">
-                <p>{`Location: ${props.location}`}</p>
-                <p>{`Profile: ${props.profile}`}</p>
-                <p>{`Followers: ${props.followers}`}</p>
-                <p>{`Following: ${props.following}`}</p>
-                <p>{`Bio: ${props.bio}`}</p>
+                <CardP>{`Location: ${props.location}`}</CardP>
+                <CardP>{`Profile: ${props.profile}`}</CardP>
+                <CardP>{`Followers: ${props.followers}`}</CardP>
+                <CardP>{`Following: ${props.following}`}</CardP>
+                <CardP>{`Bio: "${props.bio}"`}</CardP>
             </div>
         </CardDiv>
     )
